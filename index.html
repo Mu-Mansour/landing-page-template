@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,7 +12,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Landing</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css"
+    />
+    <script
+      src="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js"
+      defer
+    ></script>
   </head>
   <body>
     <header class="primary-header">
@@ -56,7 +64,7 @@
 
     <!-- start  main -->
     <main>
-      <section class="padding-block-900">
+      <section class="text-center-sm-only padding-block-900">
         <div class="container">
           <div class="even-columns">
             <div class="flow">
@@ -69,8 +77,8 @@
               </p>
               <button class="button">Get Started</button>
             </div>
-            <div>
-              <img src="images/illustration-intro.svg" alt="" />
+            <div class="image-with-bg-blob">
+              <img class="mx-auto" src="images/illustration-intro.svg" alt="" />
             </div>
           </div>
         </div>
@@ -217,60 +225,57 @@
     >
       <div class="container">
         <div class="primary-footer-wrapper">
-          <div class="primary-footer-logo-social">
-            <a href="#" aria-label="home">
-              <svg class="logo" width="146" height="24">
-                <use xlink:href="images/logo.svg#logo"></use>
-              </svg>
-            </a>
+          <a class="primary-footer-logo" href="#" aria-label="home">
+            <img class="logo mx-auto" src="images/logo.svg" alt="Logo" />
+          </a>
 
-            <ul class="social-list" role="list" aria-label="Social links">
-              <li>
-                <a aria-label="facebook" href="#">
-                  <svg class="social-icon">
-                    <use
-                      xlink:href="images/social-icons.svg#icon-facebook"
-                    ></use></svg
-                ></a>
-              </li>
-              <li>
-                <a aria-label="youtube" href="#">
-                  <svg class="social-icon">
-                    <use
-                      xlink:href="images/social-icons.svg#icon-youtube"
-                    ></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a aria-label="twitter" href="#">
-                  <svg class="social-icon">
-                    <use
-                      xlink:href="images/social-icons.svg#icon-twitter"
-                    ></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a aria-label="pinterest" href="#">
-                  <svg class="social-icon">
-                    <use
-                      xlink:href="images/social-icons.svg#icon-pinterest"
-                    ></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a aria-label="instragram" href="#">
-                  <svg class="social-icon">
-                    <use
-                      xlink:href="images/social-icons.svg#icon-instagram"
-                    ></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <ul class="social-list" role="list" aria-label="Social links">
+            <li>
+              <a aria-label="facebook" href="#">
+                <img
+                  class="social-icon"
+                  src="images/icon-facebook.svg"
+                  alt="Facebook"
+                />
+              </a>
+            </li>
+            <li>
+              <a aria-label="youtube" href="#">
+                <img
+                  class="social-icon"
+                  src="images/icon-youtube.svg"
+                  alt="YouTube"
+                />
+              </a>
+            </li>
+            <li>
+              <a aria-label="twitter" href="#">
+                <img
+                  class="social-icon"
+                  src="images/icon-twitter.svg"
+                  alt="Twitter"
+                />
+              </a>
+            </li>
+            <li>
+              <a aria-label="pinterest" href="#">
+                <img
+                  class="social-icon"
+                  src="images/icon-pinterest.svg"
+                  alt="Pinterest"
+                />
+              </a>
+            </li>
+            <li>
+              <a aria-label="instagram" href="#">
+                <img
+                  class="social-icon"
+                  src="images/icon-instagram.svg"
+                  alt="Instagram"
+                />
+              </a>
+            </li>
+          </ul>
           <div class="primary-footer-nav">
             <nav class="footer-nav">
               <ul
@@ -289,16 +294,10 @@
               </ul>
             </nav>
           </div>
-          <div class="primary-footer-form">
-            <form action="">
-              <input type="email" />
-              <button class="button" data-shadow="none">Go</button>
-            </form>
-            <p>Copyright 2020. All Rights Reserved</p>
-          </div>
         </div>
       </div>
     </footer>
+
     <!-- end Footer -->
     <script type="module" src="/main.js"></script>
   </body>

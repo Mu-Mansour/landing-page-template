@@ -210,14 +210,18 @@ p[data-width="wide"] {
 }
 
 @media (max-width: 50em) {
+  .primary-header[data-overlay] {
+    position: relative;
+    z-index: 999;
+  }
   .primary-navigation {
     display: none;
-
+    z-index: 999;
     position: fixed;
     padding: var(--size-700);
     inset: 7rem var(--size-400) auto;
     max-width: 25rem;
-    margin-left: auto;
+    margin-inline: auto;
     background: var(--clr-neutral-100);
     border-radius: var(--size-100);
     box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
@@ -267,49 +271,26 @@ p[data-width="wide"] {
 .primary-footer-wrapper {
   display: grid;
   gap: var(--size-700);
+  justify-content: center;
   grid-template-areas:
-    "form"
     "nav"
-    "logo-social";
+    "social"
+    "logo";
 }
-
-.primary-footer-logo-social {
-  grid-area: logo-social;
-
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  gap: var(--size-700);
+.primary-footer-logo {
+  grid-area: logo;
 }
 
 .primary-footer-nav {
   grid-area: nav;
 }
 
-.primary-footer-form {
-  grid-area: form;
-
-  display: grid;
-  align-content: space-between;
-}
-
-.primary-footer form {
-  display: flex;
-  gap: var(--size-200);
-}
-
-input:where([type="text"], [type="email"], ) {
-  border-radius: 100vw;
-  border: 0;
-  padding: var(--size-300) var(--size-400);
-}
-
 @media (min-width: 50em) {
   .primary-footer-wrapper {
-    grid-template-areas: "logo-social nav form";
+    grid-template-areas: "  logo nav social  ";
   }
 
-  .primary-footer-logo-social {
+  .primary-footer-logo {
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--size-700);
@@ -529,6 +510,30 @@ input:where([type="text"], [type="email"], ) {
 
 /* Utility classes */
 
+@media (max-width: 50em) {
+  .image-with-bg-blob {
+    order: -1;
+  }
+}
+.image-with-bg-blob::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  width: 90%;
+  max-height: 70vh;
+  aspect-ratio: 1/1.2;
+  background-image: url("images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+@media (max-width: 50em) {
+  .image-with-bg-blob::before {
+    width: 45%;
+  }
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -670,6 +675,9 @@ input:where([type="text"], [type="email"], ) {
 
 .margin-bottom-700 {
   margin-block-end: var(--size-700);
+}
+.mx-auto {
+  margin-inline: auto;
 }
 
 .display-sm-none {
